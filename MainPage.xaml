@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="muammerOrnek.MainPage"
+             BackgroundColor="LightGray">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="10"
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button
+                    Text="Aktif Et"
+                    BackgroundColor="MediumSeaGreen"
+                    TextColor="White"
+                    Clicked="OnCounterClicked"
+                    CornerRadius="20"
+                    Padding="10, 5"/>
+                <Button
+                    Text="Devre Dışı Bırak"
+                    BackgroundColor="Tomato"
+                    TextColor="White"
+                    Clicked="btn2_Clicked"
+                    CornerRadius="20"
+                    Padding="10, 5"/>
+            </HorizontalStackLayout>
+            <Label x:Name="AktifMi" Text="Veritabanını aktif etmeniz gerekiyor!" HorizontalOptions="Center" 
+                   FontSize="Subtitle"  BackgroundColor="Transparent" TextColor="Black"  Padding="10" />
+
+            <Button
+                x:Name="btn3"
+                Text="Listele"
+                Clicked="btn3_Clicked"
+                HorizontalOptions="Start"
+                BackgroundColor="Blue"/>
+            <Label Text="Stok Listesi" FontAttributes="Bold" />
+            <CollectionView x:Name="StokCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Horizontal" Padding="10" Spacing="10">
+                            <Label Text="ID:" FontAttributes="Bold" />
+                            <Label Text="{Binding Id} " />
+
+                            <!-- Ad etiketini ekle -->
+                            <Label Text="Ürün Adı:" FontAttributes="Bold" />
+                            <Label Text="{Binding Ad} " />
+
+                            <!-- Miktar etiketini ekle -->
+                            <Label Text="Miktar:" FontAttributes="Bold" />
+                            <Label Text="{Binding Miktar} " />
+
+                            <!-- Sno etiketini ekle -->
+                            <Label Text="Stok Numarası:" FontAttributes="Bold" />
+                            <Label Text="{Binding Sno} " />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!-- Ekleme Alanı -->
+            <Label Text="Ekleme İşlemi" FontAttributes="Bold" />
+            <Entry x:Name="txtAd" Placeholder="Ürün Adı" />
+            <Entry x:Name="txtMiktar" Placeholder="Miktar" Keyboard="Numeric" />
+            <Entry x:Name="txtSno" Placeholder="Stok Numarası" Keyboard="Numeric" />
+            <Button
+                x:Name="btn4"
+                Text="Veri Ekle"
+                Clicked="btn4_Clicked"
+                HorizontalOptions="Center"
+                BackgroundColor="ForestGreen"/>
+            <!-- Silme Alanı -->
+            <Label Text="Silme İşlemi" FontAttributes="Bold" />
+            <Entry x:Name="txtSilID" Placeholder="Silinecek ID" Keyboard="Numeric" />
+            <Button
+                x:Name="btn5"
+                Text="Veri Sil"
+                Clicked="btn5_Clicked"
+                HorizontalOptions="Center"
+                BackgroundColor="DarkRed"/>
+            <!-- Arama Alanı -->
+            <Label Text="Arama İşlemi" FontAttributes="Bold" />
+            <Entry x:Name="txtArama" Placeholder="Aramak istediğiniz ürün adı" HorizontalOptions="Center" />
+            <Button Text="Ara" Clicked="btnAra_Clicked" HorizontalOptions="Center" />
+            <!-- Güncelleme Alanı -->
+            <Label Text="Güncelleme İşlemi" FontAttributes="Bold" />
+            <Entry x:Name="txtGuncelleID" Placeholder="Güncellenecek ID" Keyboard="Numeric" />
+            <Entry x:Name="txtYeniAd" Placeholder="Yeni Ürün Adı" />
+            <Entry x:Name="txtYeniMiktar" Placeholder="Yeni Miktar" Keyboard="Numeric" />
+            <Entry x:Name="txtYeniSno" Placeholder="Yeni Stok Numarası" Keyboard="Numeric" />
+            <Button Text="Güncelle" Clicked="btnGuncelle_Clicked" HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
