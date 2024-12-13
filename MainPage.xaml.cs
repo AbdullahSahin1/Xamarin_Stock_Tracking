@@ -22,7 +22,7 @@ namespace muammerOrnek
 
         }
 
-        static SQLiteConnection bag = new SQLiteConnection(@"Data Source=C:\Users\ozans\Desktop\VizeOdev\YBS.db3");
+        static SQLiteConnection bag = new SQLiteConnection(@"Data Source=C:\Users\ozans\Desktop\StokKontrol\YBS.db3");
 
         private async void OnCounterClicked(object sender, EventArgs e)
         {
